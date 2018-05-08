@@ -1,11 +1,17 @@
 import React from 'react';
-import { Router } from 'react-router';
+import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+import NavBar from './components/NavBar';
+import BreakfastCerealsContainer from './containers/BreakfastCerealsContainer';
+import BreakfastCerealShowContainer from './containers/BreakfastCerealShowContainer';
 
 const App = props => {
   return(
-    <div>
-      Hello world!
-    </div>
+    <Router history={browserHistory}>
+      <Route path='/' component={NavBar} >
+        <IndexRoute component={BreakfastCerealsContainer} />
+        <Route path="cereals/:id" component={BreakfastCerealShowContainer}/>
+      </Route>
+    </Router>
   )
 }
 
