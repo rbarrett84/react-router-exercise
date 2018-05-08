@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const CerealTile = props => {
   return(
     <div className="cereal">
-      <h1>{props.name}</h1>
+      <Link to={`/cereals/${props.id}`}><h1>{props.name}</h1></Link>
     </div>
   )
 }
